@@ -3,14 +3,22 @@
     <table class="items">
         <tr *ngFor="let item of items">
             <td class="badge">
-                <a href="#" target="_blank">
-                    {{item.id}}
-                </a>
+                <button [class.selected]="item == selectedItem" type="button" (click)="onSelect(item)">
+                 <span>{{item.id}}</span>   
+                </button>
             </td>
             <td class="name">
-                {{item.name}}
+                <span>{{item.name}}</span>
             </td>
         </tr>
     </table>
 </div>
+
+<div *ngIf="selectedItem">
+    <h2>Order#: {{selectedItem.id}} Details</h2>
+    <h3>name: {{selectedItem.name}}</h3>
+    <h4>description: {{selectedItem.description}}</h4>
+</div>
 <!-- <div><span>id: </span>{{item.id}}<span> name: </span>{{item.name}}</div> -->
+
+
