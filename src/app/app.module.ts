@@ -8,6 +8,7 @@ import { TableComponent } from './table/table.component';
 import { TotalOrderShippedComponent } from './total-order-shipped/total-order-shipped.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ItemsComponent } from './items/items.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ItemsComponent } from './items/items.component';
     TableComponent,
     TotalOrderShippedComponent,
     NavBarComponent,
-    ItemsComponent
+    ItemsComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
