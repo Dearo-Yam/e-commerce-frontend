@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from '../orders.service';
 
 @Component({
   selector: 'app-total-order-shipped',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TotalOrderShippedComponent implements OnInit {
 
-  constructor() { }
+  totalOrdersShipped: any;
+
+  constructor(private _ordersService: OrdersService) { }
 
   ngOnInit(): void {
+    this._ordersService.getTotalOrdersShipped().subscribe(totalOrdersShipped => {
+      this.totalOrdersShipped = totalOrdersShipped;
+    })
   }
 
 }
