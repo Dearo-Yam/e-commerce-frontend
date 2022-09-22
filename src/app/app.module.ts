@@ -7,6 +7,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TableComponent } from './table/table.component';
 import { TotalOrderShippedComponent } from './total-order-shipped/total-order-shipped.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
+import { PendingComponent } from './pending/pending.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     SearchBarComponent,
     TableComponent,
     TotalOrderShippedComponent,
-    NavBarComponent
+    NavBarComponent,
+    HomeComponent,
+    PendingComponent
   ],
   imports: [
     BrowserModule,
