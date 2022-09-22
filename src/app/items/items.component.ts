@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item }  from '../item';
-import { ITEMS } from '../mock-items';
-import { OrderDetailComponent } from '../order-detail/order-detail.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialog } from '@angular/material/dialog';
-
+// import { ITEMS } from '../mock-items';
+import { ItemService } from '../item.service';
 
 
 @Component({
@@ -14,23 +11,17 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ItemsComponent implements OnInit {
 
+  items: Item[] = [];
   
-  constructor() { }
-  //GOES INTO CONSTRUCTOR private matDialog: MatDialog
-
+  constructor(private itemService: ItemService) {}
+  
   ngOnInit(): void {
+    this.getOrders();
   }
 
-
-  items = ITEMS;
-
-  selectedItem?: Item;
-  onSelect(item: Item): void {
-    this.selectedItem = item;
+  getOrders(): void {
+    this.itemService.getOrders()
+    .subscribe(items => this.items = items);
   }
-
-  // onOrderIdClick() {
-       //this.matDialog.open(OrderDetailComponent);
-  // }
 
 }

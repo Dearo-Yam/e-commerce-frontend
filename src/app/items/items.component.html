@@ -3,9 +3,10 @@
     <table class="items">
         <tr *ngFor="let item of items">
             <td class="badge">
-                <button [class.selected]="item == selectedItem" type="button" (click)="onSelect(item)">
+                <!-- [class.selected]="item == selectedItem" type="button" (click)="onSelect(item)" -->
+                <a routerLink="/orderDetails/{{item.id}}">
                  <span>{{item.id}}</span>   
-                </button>
+                </a>
             </td>
             <td class="name">
                 <span>{{item.name}}</span>
@@ -13,12 +14,4 @@
         </tr>
     </table>
 </div>
-
-<div *ngIf="selectedItem">
-    <h2>Order#: {{selectedItem.id}} Details</h2>
-    <h3>name: {{selectedItem.name}}</h3>
-    <h4>description: {{selectedItem.description}}</h4>
-</div>
-<!-- <div><span>id: </span>{{item.id}}<span> name: </span>{{item.name}}</div> -->
-
 

@@ -13,6 +13,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ItemsComponent } from './items/items.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TotalOrderShippedComponent,
     NavBarComponent,
     ItemsComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    OrderDetailWindowComponent
   ],
 
   imports: [
@@ -34,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [OrderDetailComponent]
 })
 export class AppModule { }
