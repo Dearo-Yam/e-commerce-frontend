@@ -1,9 +1,28 @@
 <p>order-detail-window works!</p>
 
 <div *ngIf="item">
-    <h2>Order#: {{item.id}} Details</h2>
-    <h3>name: {{item.name}}</h3>
-    <h4>description: {{item.description}}</h4>
+    <h1 style="font-size: 40px;">Order Details</h1>
+    <h2>Order#: {{item.id}}</h2>
+    <h3>Customer Details:</h3>
+    <ol>
+        <li>
+            <h2>item sku: </h2>
+            <h2>name: {{item.name}}</h2>
+            <h2>description: {{item.description}}</h2>
+        </li>
+    </ol>
+
+    <!-- <table class="items">
+        <tr>
+            <td class="badge">
+                 <span>{{item.id}}</span>   
+            </td>
+            <td class="name">
+                <span>{{item.name}}</span>
+            </td>
+        </tr>
+    </table> -->
+
 </div>
 
 
