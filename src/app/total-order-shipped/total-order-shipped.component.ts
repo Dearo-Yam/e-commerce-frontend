@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { OrdersService } from '../orders.service';
 
 @Component({
@@ -8,13 +8,18 @@ import { OrdersService } from '../orders.service';
 })
 export class TotalOrderShippedComponent implements OnInit {
 
-  totalOrdersShipped: any;
+  totalOrdersShipped$: any;
 
-  constructor(private _ordersService: OrdersService) { }
+  constructor(private _ordersService: OrdersService, private ref:ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.getTotalOrdersShipped();
+    this.ref.detectChanges();
+  }
+
+  getTotalOrdersShipped() {
     this._ordersService.getTotalOrdersShipped().subscribe(totalOrdersShipped => {
-      this.totalOrdersShipped = totalOrdersShipped;
+      this.totalOrdersShipped$ = totalOrdersShipped;
     })
   }
 
