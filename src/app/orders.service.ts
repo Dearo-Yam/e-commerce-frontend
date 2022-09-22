@@ -11,7 +11,7 @@ export class OrdersService {
 
   constructor(private http: HttpClient) {}
 
-  getTotalOrdersShipped(): Observable<number> {
+  getTotalOrdersShipped() {
     return this.http.get<any>(`${this.baseUrl}/shipped/count`);
   }
 }

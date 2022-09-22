@@ -8,18 +8,17 @@ import { OrdersService } from '../orders.service';
 })
 export class TotalOrderShippedComponent implements OnInit {
 
-  totalOrdersShipped$: any;
+  totalOrdersShipped: any;
 
-  constructor(private _ordersService: OrdersService, private ref:ChangeDetectorRef) { }
+  constructor(private _ordersService: OrdersService) { }
 
   ngOnInit(): void {
     this.getTotalOrdersShipped();
-    this.ref.detectChanges();
   }
 
   getTotalOrdersShipped() {
     this._ordersService.getTotalOrdersShipped().subscribe(totalOrdersShipped => {
-      this.totalOrdersShipped$ = totalOrdersShipped;
+      this.totalOrdersShipped = totalOrdersShipped;
     })
   }
 
