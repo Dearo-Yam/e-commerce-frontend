@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from '../orders.service';
 
 @Component({
   selector: 'app-pending',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent implements OnInit {
-
-  constructor() { }
+orders:any;
+  constructor(private _ordersService: OrdersService) { }
 
   ngOnInit(): void {
+    this._ordersService.getPendingOrders().subscribe(orders =>{
+      this.orders = orders;
+    })
   }
 
 }
