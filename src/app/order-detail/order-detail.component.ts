@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Order }  from '../order';
 import { ORDERS } from '../mock-orders';
+=======
+>>>>>>> dev
 
 @Component({
   selector: 'app-order-detail',
@@ -10,11 +13,16 @@ import { ORDERS } from '../mock-orders';
 })
 export class OrderDetailComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private matDialog: MatDialog) {}
+=======
+  constructor() { }
+>>>>>>> dev
 
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
   orders = ORDERS;
 
   selectedOrder?: Order;
@@ -33,4 +41,6 @@ export class OrderDetailComponent implements OnInit {
     this.matDialog.open(OrderDetailComponent);
   }
 
+=======
+>>>>>>> dev
 }

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Order } from '../order';
 import { OrderService } from '../order.service';
+=======
+import { OrdersService } from '../orders.service';
+>>>>>>> dev
 
 @Component({
   selector: 'app-table',
@@ -9,6 +13,7 @@ import { OrderService } from '../order.service';
 })
 export class TableComponent implements OnInit {
 
+<<<<<<< HEAD
   orders: Order[]= [];
 
   constructor(private orderService: OrderService) {}
@@ -20,6 +25,26 @@ export class TableComponent implements OnInit {
   getOrders(): void {
     this.orderService.getOrders()
     .subscribe(orders => this.orders = orders);
+=======
+  orders: any;
+  status: string[];
+  //id: number;
+  //s: string;
+  constructor(private tableService : OrdersService) {
+    this.status = ['Pending', 'Shipped', 'Cancelled'];
+   }
+
+   onUpdate(s: string): void{
+    this.tableService.updateOrderStatus()
+    //this.s = s;
+   }
+
+  ngOnInit(): void {
+    this.tableService.getPendingOrders().subscribe(orders =>
+      {
+        this.orders = orders;
+      })
+>>>>>>> dev
   }
 
 }
