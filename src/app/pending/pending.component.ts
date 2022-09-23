@@ -18,8 +18,8 @@ export class PendingComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.orderService.getPendingOrders().subscribe(orders =>
-      {this.pendingOrders = orders;})
+    this.orderService.getPendingOrders().subscribe(pendingOrders =>
+      {this.pendingOrders = pendingOrders;})
   }
 
 }
