@@ -6,8 +6,8 @@ import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   { path: 'orderDetails/:id', component: OrderDetailWindowComponent },
-  { path: '', redirectTo: '/orders', pathMatch: 'full'},
-  { path: 'orders', component: TableComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: TableComponent }
 
 ];
 
