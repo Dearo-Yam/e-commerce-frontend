@@ -1,0 +1,8 @@
+.table-scroll {
+    position: relative;
+    height: 450px;
+    overflow: auto;
+    }
+.scroll-y {
+    display: block;
+    }
