@@ -18,4 +18,8 @@ export class OrdersService {
   getAvgTimeToShipp() {
     return this.http.get<any>(`${this.baseUrl}/shipped/avg`);
   }
+
+  getPendingOrders(){
+    return this.http.get<any>(`${this.baseUrl}/show`)
+  }
 }
