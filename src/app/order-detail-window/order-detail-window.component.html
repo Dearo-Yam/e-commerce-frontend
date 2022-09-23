@@ -3,32 +3,60 @@
 <div *ngIf="order">
     <h1 style="font-size: 40px;">Order Details</h1>
     
-    <h3>Customer Details:</h3>
+    <!-- <h3>Customer Details:</h3>
     <ol>
         <li>
             <h2>Items: </h2>
             <h2>{{order.itemInfo}}</h2>
             
         </li>
-    </ol>
+    </ol> -->
     
     <h2>Order#: {{order.id}}</h2>
+    <input type="checkbox" id="shipped">
+       <label for="shipped">Shipped</label>
+    <button style="margin-left: auto;">
+        Shipped
+    </button>
     <div class="card-container">
 
         <div class="card">
             <div class="card-header">
-                Customer Details
+                <h1>Customer Details</h1>
             </div>
             <div class="card-body">
-                <h2>100</h2>
+                <h3>Customer name: Name</h3>
+                <h3>Customer address: Address</h3>
+                <h3>Any other info: [info]</h3>
             </div>
         </div>
         <div class="card">
             <div class="card-header">
-                Items
+                <h2>Items</h2>
             </div>
             <div class="card-body">
-                <h2>100</h2>
+                <Table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Item Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                123
+                            </td>
+                            <td>
+                                item1
+                            </td>
+                            <td>
+                                1000
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
             </div>
         </div>
     
