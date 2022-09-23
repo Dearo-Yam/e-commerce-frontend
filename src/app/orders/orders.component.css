@@ -14,7 +14,7 @@ td {
     padding: 5px;
 }
 /*CSS here is from Angular Tour of items*/
-.items button {
+.orders button {
     flex: 1;
     cursor: pointer;
     position: relative;
@@ -28,33 +28,33 @@ td {
     height: 1.8em;
   }
 
-  .items button:hover {
+  .orders button:hover {
     color: #2c3a41;
     background-color: #e6e6e6;
     left: .1em;
   }
 
-  .items button:active {
+  .orders button:active {
     background-color: #525252;
     color: #fafafa;
   }
 
 
-.items button.selected {
+.orders button.selected {
     background-color: black;
     color: white;
   }
   
-  .items button.selected:hover {
+  .orders button.selected:hover {
     background-color: #505050;
     color: white;
   }
   
-  .items button.selected:active {
+  .orders button.selected:active {
     background-color: black;
     color: white;
   }
 
-  .items .name {
+  .orders .name {
     align-self: center;
   }

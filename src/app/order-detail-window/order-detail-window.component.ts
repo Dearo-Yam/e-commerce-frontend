@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ItemService } from '../item.service';
-import { Item }  from '../item';
+import { OrderService } from '../order.service';
+import { Order }  from '../order';
 
 @Component({
   selector: 'app-order-detail-window',
@@ -12,11 +12,11 @@ import { Item }  from '../item';
 })
 export class OrderDetailWindowComponent implements OnInit {
 
-  item: Item | undefined;
+  order: Order | undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private itemService: ItemService,
+    private orderService: OrderService,
     private location: Location
   ) {}
 
@@ -26,8 +26,8 @@ export class OrderDetailWindowComponent implements OnInit {
 
   getOrder(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.itemService.getOrder(id)
-    .subscribe(item => this.item = item);
+    this.orderService.getOrder(id)
+    .subscribe(order => this.order = order);
   }
 
   goBack(): void {

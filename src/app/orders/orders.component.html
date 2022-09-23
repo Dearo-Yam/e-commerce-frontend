@@ -1,15 +1,15 @@
 <h2>Mock Dashboard</h2>
 <div>
-    <table class="items">
-        <tr *ngFor="let item of items">
+    <table class="orders">
+        <tr *ngFor="let order of orders">
             <td class="badge">
                 <!-- [class.selected]="item == selectedItem" type="button" (click)="onSelect(item)" -->
-                <a routerLink="/orderDetails/{{item.id}}">
-                 <span>{{item.id}}</span>   
+                <a routerLink="/orderDetails/{{order.id}}">
+                 <span>{{order.id}}</span>   
                 </a>
             </td>
             <td class="name">
-                <span>{{item.name}}</span>
+                <span>{{order.itemInfo}}</span>
             </td>
         </tr>
     </table>

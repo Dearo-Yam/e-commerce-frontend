@@ -10,7 +10,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TableComponent } from './table/table.component';
 import { TotalOrderShippedComponent } from './total-order-shipped/total-order-shipped.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ItemsComponent } from './items/items.component';
+import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
@@ -22,7 +22,7 @@ import { OrderDetailWindowComponent } from './order-detail-window/order-detail-w
     TableComponent,
     TotalOrderShippedComponent,
     NavBarComponent,
-    ItemsComponent,
+    OrdersComponent,
     OrderDetailComponent,
     OrderDetailWindowComponent
   ],

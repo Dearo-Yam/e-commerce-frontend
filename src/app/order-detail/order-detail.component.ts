@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Item }  from '../item';
-import { ITEMS } from '../mock-items';
+import { Order }  from '../order';
+import { ORDERS } from '../mock-orders';
 
 @Component({
   selector: 'app-order-detail',
@@ -15,11 +15,11 @@ export class OrderDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  items = ITEMS;
+  orders = ORDERS;
 
-  selectedItem?: Item;
-  onSelect(item: Item): void {
-    this.selectedItem = item;
+  selectedOrder?: Order;
+  onSelect(order: Order): void {
+    this.selectedOrder = order;
   }
   
   onOrderIdClick() {
@@ -28,7 +28,7 @@ export class OrderDetailComponent implements OnInit {
 
  
 
-    dialogConfig.data = this.selectedItem;
+    dialogConfig.data = this.selectedOrder;
     //Might have to create clickable buttons to close the popup dialog
     this.matDialog.open(OrderDetailComponent);
   }
