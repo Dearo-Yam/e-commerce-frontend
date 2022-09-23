@@ -12,6 +12,7 @@ import { PendingComponent } from './pending/pending.component';
 import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {  GoogleLoginProvider } from 'angularx-social-login';
+import { StartNavComponent } from './start-nav/start-nav.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {  GoogleLoginProvider } from 'angularx-social-login';
     NavBarComponent,
     HomeComponent,
     PendingComponent,
-    LoginComponent
+    LoginComponent,
+    StartNavComponent
 
   ],
   imports: [
