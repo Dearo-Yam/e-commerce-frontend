@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TableComponent } from './table/table.component';
-import { TotalOrderShippedComponent } from './total-order-shipped/total-order-shipped.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MetricsComponent } from './metrics/metrics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     TableComponent,
-    TotalOrderShippedComponent,
-    NavBarComponent
+    NavBarComponent,
+    MetricsComponent
   ],
   imports: [
     BrowserModule,
