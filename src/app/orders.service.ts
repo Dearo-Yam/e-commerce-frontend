@@ -20,6 +20,6 @@ export class OrdersService {
   }
 
   getPendingOrders(){
-    return this.http.get<any>(`${this.baseUrl}/show`)
+    return this.http.get<any>(`${this.baseUrl}/pending`)
   }
 }

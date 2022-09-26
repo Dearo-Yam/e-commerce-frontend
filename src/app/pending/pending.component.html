@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="pending.js"></script>
+
 </head>
 <body>
-    <div ><app-search-bar></app-search-bar></div>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
             <th>Order Number</th>
             <th>Status</th>
             <th>Order Created</th>
-            <th>Order Completed</th>
+            <!-- <th>Order Completed</th> -->
         </tr>
         </thead>
         <tbody >
@@ -23,7 +23,10 @@
             <tr *ngFor="let order of orders">
               
                 <!-- <td><a [routerLink]="['/product-detail/',product.id]">{{product.id}}</a></td> -->
-                <td>{{order.orderid}}</td>
+                <td>{{order.orderId}}</td>
+                <td>{{order.orderStatus}}</td>
+                <td>{{order.dateOrdered}}</td>
+                
                 <!-- <td>{{product.price}}</td>
                 <td>{{product.description}}</td> -->
                
