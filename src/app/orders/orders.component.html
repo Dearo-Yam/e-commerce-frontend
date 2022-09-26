@@ -1,0 +1,17 @@
+<h2>Mock Dashboard</h2>
+<div>
+    <table class="orders">
+        <tr *ngFor="let order of orders">
+            <td class="badge">
+                <!-- [class.selected]="item == selectedItem" type="button" (click)="onSelect(item)" -->
+                <a routerLink="/order-details/{{order.id}}">
+                 <span>{{order.id}}</span>   
+                </a>
+            </td>
+            <td class="name">
+                <span>{{order.itemInfo}}</span>
+            </td>
+        </tr>
+    </table>
+</div>
+
