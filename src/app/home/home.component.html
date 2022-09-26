@@ -1,16 +1,12 @@
 <div class="container" >
 
-  <div>
+   <!-- <app-total-order-shipped></app-total-order-shipped> -->
+
+   <div>
     <app-metrics></app-metrics>
   </div>
-    <!-- <app-total-order-shipped></app-total-order-shipped> -->
-    <div >
-      <tr>
-      <td><app-search-bar></app-search-bar></td>
-      <td><app-filter-button></app-filter-button></td>
-      </tr>
-    </div>
-
-    <app-table></app-table>
-    <router-outlet></router-outlet>
-
+  <div ><app-search-bar></app-search-bar></div>
+  <app-pending></app-pending>
+  <!-- <app-table></app-table> -->
+   <router-outlet></router-outlet>
+ </div>

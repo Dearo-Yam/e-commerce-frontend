@@ -2,26 +2,20 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-            <th>Order Number</th>
-            <th>Status</th>
-            <th>Order Created</th>
-            <!-- <th>Order Completed</th> -->
-        </tr>
-        </thead>
-        <tbody >
-    
-            <tr *ngFor="let order of orders">
-              
-                <!-- <td><a [routerLink]="['/product-detail/',product.id]">{{product.id}}</a></td> -->
-                <td>{{order.orderId}}</td>
-                <td>{{order.orderStatus}}</td>
-                <td>{{order.dateOrdered}}</td>
-                
-                <!-- <td>{{product.price}}</td>
-                <td>{{product.description}}</td> -->
-               
+                <th>Order Number</th>
+                <th>Create Day</th>
+                <th>Order Status</th>
             </tr>
+        </thead>
 
+        <tbody>
+            <tr *ngFor="let order of pendingOrders">
+
+                <td><a [routerLink]="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
+                <td>{{order.dateOrdered}}</td>
+                <td>{{order.orderStatus}}</td>
+            </tr>
         </tbody>
+
     </table>
 </div>
