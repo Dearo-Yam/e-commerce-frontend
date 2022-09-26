@@ -9,7 +9,7 @@ import { OrderService } from '../order.service';
 })
 export class TableComponent implements OnInit {
 
-  orders: Order[]= [];
+  orders: any;
   status: string[];
   constructor(private orderService: OrderService) {
     this.status = ['Pending', 'Shipped', 'Cancelled'];
