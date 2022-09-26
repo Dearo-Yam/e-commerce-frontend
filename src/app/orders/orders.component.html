@@ -4,7 +4,7 @@
         <tr *ngFor="let order of orders">
             <td class="badge">
                 <!-- [class.selected]="item == selectedItem" type="button" (click)="onSelect(item)" -->
-                <a routerLink="/orderDetails/{{order.id}}">
+                <a routerLink="/order-details/{{order.id}}">
                  <span>{{order.id}}</span>   
                 </a>
             </td>
