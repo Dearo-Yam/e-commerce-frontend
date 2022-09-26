@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+//Import for pop-up dialog
+// import { MatDialogModule } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -23,6 +28,8 @@ import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.componen
     TableComponent,
   //  TotalOrderShippedComponent,
     NavBarComponent,
+    // OrdersComponent,
+    // OrderDetailWindowComponent,
     PendingComponent,
     HomeComponent,
     IndexComponent,
@@ -33,9 +40,15 @@ import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.componen
     ShippedOrdersComponent
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
+ //   BrowserAnimationsModule,
+    HttpClientModule
+  ],
+  entryComponents: [
+  //  OrderDetailWindowComponent,
     HttpClientModule,
     SocialLoginModule
     

@@ -37,4 +37,7 @@ export class OrdersService {
   updateOrderStatus(){
     //return this.http.put<any>(`${this.baseUrl}/update/${id}/${s}`, orders)
   }
+  getOrders(id:number){
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
+  }
 }

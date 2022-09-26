@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../order';
 import { OrdersService } from '../orders.service';
 
 @Component({
@@ -16,4 +17,26 @@ export class TableComponent implements OnInit {
       })
     }
 
+  // ngOnInit(): void {
+  //   this.getOrders();
+  // }
+
+  // getOrders(): void {
+  //   this.orderService.getPendingOrders()
+  //   .subscribe(orders => this.orders = orders);
+  // }
+
+
+  //  onUpdate(s: string): void{
+  //   this.orderService.updateOrderStatus()
+  //   //this.s = s;
+  //  }
+
+  // ngOnInit(): void {
+  //   this.orderService.getPendingOrders().subscribe(orders =>
+  //     {
+  //       this.orders = orders;
+  //     })
+
+  // }
 }
