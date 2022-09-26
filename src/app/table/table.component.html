@@ -8,17 +8,16 @@
                     <th>Order Status</th>
                 </tr>
             </thead>
-    
+
             <tbody>
                 <tr *ngFor="let order of orders">
-                  
+
                     <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
                     <td>{{order.dateordered}}</td>
                     <td>{{order.orderstatus}}</td>
-                        
+
                 </tr>
             </tbody>
-    
+
         </table>
 </div>
-

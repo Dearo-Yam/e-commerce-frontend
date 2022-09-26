@@ -10,6 +10,17 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   {path: 'order-detail/:id', component: OrderDetailComponent},
   {path: 'table', component: TableComponent}
+import { LoginComponent } from './login/login.component';
+import { PendingComponent } from './pending/pending.component';
+import { TableComponent } from './table/table.component';
+
+
+const routes: Routes = [
+  { path: '',redirectTo: '/pending', pathMatch:'full'},
+  { path: 'home', component: HomeComponent},
+  {path:'all', component: TableComponent},
+  {path:'login', component: LoginComponent}
+
 ];
 
 @NgModule({
