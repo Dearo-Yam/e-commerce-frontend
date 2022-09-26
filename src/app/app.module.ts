@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {  GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
+import { SharedService } from './shared.service';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { MetricsComponent } from './metrics/metrics.component';
     SocialLoginModule
     
   ],
-  providers: [ {
+  providers: [ 
+    AuthGuard,{
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: true,
