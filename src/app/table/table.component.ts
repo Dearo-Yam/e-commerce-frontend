@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
+import { __param } from 'tslib';
+import { OrdersService } from '../orders.service';
 
 @Component({
   selector: 'app-table',

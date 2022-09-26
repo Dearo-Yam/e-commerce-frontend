@@ -10,7 +10,7 @@
 
         <tbody>
             <tr *ngFor="let order of pendingOrders">
-              
+              <!--  /order-detail/{{order.id}}-->
                 <td><a [routerLink]="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
                 <td>{{order.dateOrdered}}</td>
                 <td>{{order.orderStatus}}</td>
