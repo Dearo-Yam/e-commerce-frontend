@@ -22,6 +22,10 @@ export class OrdersService {
   getPendingOrders(){
     return this.http.get<any>(`${this.baseUrl}/pending`)
   }
+
+  getOrders(id:number){
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
+  }
   
   getTableOrders(){
     return this.http.get<any>(`${this.baseUrl}/all`);
