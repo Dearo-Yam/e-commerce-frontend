@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 
 
 import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
-import { OrdersComponent } from './orders/orders.component';
 
 
 const routes: Routes = [

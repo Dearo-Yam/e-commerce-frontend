@@ -42,19 +42,21 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let order of orders">
+                <tr *ngFor="let order of orders| paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };">
 
-                    <td><a [routerLink]="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
-                    <td>{{order.dateOrdered}}</td>
-                    <td>{{order.orderStatus}}</td>
+                    <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
+                    <td>{{order.dateordered}}</td>
+                    <td>{{order.orderstatus}}</td>
 
                 </tr>
             </tbody>
-
         </table>
-</div>
-
-        </table>
+    </div>
         <div class="d-flex justify-content-center">
             <pagination-controls
               previousLabel="Prev"
@@ -62,4 +64,6 @@
               (pageChange)="onTableDataChange($event)"
             >
             </pagination-controls>
+        
+    
 </div>

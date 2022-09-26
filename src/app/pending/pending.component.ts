@@ -11,7 +11,7 @@ import { OrdersService } from '../orders.service';
 export class PendingComponent implements OnInit {
 
 
-  pendingOrders: any;
+  orders: any;
 
   constructor(private actRouter:ActivatedRoute, private orderService: OrdersService) {
   }
@@ -19,7 +19,7 @@ export class PendingComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderService.getPendingOrders().subscribe(pendingOrders =>
-      {this.pendingOrders = pendingOrders;})
+      {this.orders = pendingOrders;})
   }
 
 }

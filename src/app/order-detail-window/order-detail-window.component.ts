@@ -12,7 +12,7 @@ import { Order }  from '../order';
 })
 export class OrderDetailWindowComponent implements OnInit {
 
-  order: Order | undefined;
+  orders: any
 
   constructor(
     private route: ActivatedRoute,
@@ -27,7 +27,7 @@ export class OrderDetailWindowComponent implements OnInit {
   getOrder(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.orderService.getOrders(id)
-    .subscribe(order => this.order = order);
+    .subscribe(orders => this.orders = orders);
   }
 
   goBack(): void {
