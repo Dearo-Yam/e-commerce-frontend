@@ -10,13 +10,18 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let order of orders">
+                <tr *ngFor="let order of orders.slice(0,10)">
 
                     <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
                     <td>{{order.dateordered}}</td>
                     <td>{{order.orderstatus}}</td>
 
                 </tr>
+                <mat-paginator [length]="100"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Select page">
+                </mat-paginator>
             </tbody>
 
         </table>

@@ -12,29 +12,34 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {  GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
+import { FilterButtonComponent } from './filter-button/filter-button.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     TableComponent,
-    TotalOrderShippedComponent,
     NavBarComponent,
     HomeComponent,
-    IndexComponent,
-    FilterButtonComponent
     NavBarComponent,
     HomeComponent,
     MetricsComponent,
     PendingComponent,
-    LoginComponent
-
+    LoginComponent,
+    FilterButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
 
   ],
   providers: [ {
