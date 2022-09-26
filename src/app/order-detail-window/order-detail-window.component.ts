@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { OrderService } from '../order.service';
+import { OrdersService } from '../orders.service';
 import { Order }  from '../order';
 
 @Component({
@@ -16,7 +16,7 @@ export class OrderDetailWindowComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrderService,
+    private orderService: OrdersService,
     private location: Location
   ) {}
 

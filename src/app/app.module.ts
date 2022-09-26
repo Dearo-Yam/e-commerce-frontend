@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TableComponent } from './table/table.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-
 import { OrdersComponent } from './orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
@@ -26,6 +25,7 @@ import { FilterButtonComponent } from './filter-button/filter-button.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -41,13 +41,19 @@ import { MatSortModule } from '@angular/material/sort';
     HomeComponent,
     MetricsComponent,
     LoginComponent
+    
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
+
   ],
   entryComponents: [
     OrderDetailWindowComponent,
@@ -57,6 +63,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+
 
   ],
   providers: [ {
@@ -75,4 +82,5 @@ import { MatSortModule } from '@angular/material/sort';
   },],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

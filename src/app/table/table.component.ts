@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
-import { OrderService } from '../order.service';
+import { OrdersService } from '../orders.service';
 
 
 @Component({
@@ -12,7 +12,11 @@ export class TableComponent implements OnInit {
 
   orders: any;
   status: string[];
-  constructor(private orderService: OrderService) {
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  tableSizes: any = [3, 6, 9, 12];
+  constructor(private orderService: OrdersService) {
     this.status = ['Pending', 'Shipped', 'Cancelled'];
   }
 
@@ -21,21 +25,20 @@ export class TableComponent implements OnInit {
   }
 
   getOrders(): void {
-    this.orderService.getOrders()
+    this.orderService.getPendingOrders()
     .subscribe(orders => this.orders = orders);
   }
 
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getOrders();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getOrders();
+  }
 
-  //  onUpdate(s: string): void{
-  //   this.orderService.updateOrderStatus()
-  //   //this.s = s;
-  //  }
-
-  // ngOnInit(): void {
-  //   this.orderService.getPendingOrders().subscribe(orders =>
-  //     {
-  //       this.orders = orders;
-  //     })
-
-  // }
 }
+
+
