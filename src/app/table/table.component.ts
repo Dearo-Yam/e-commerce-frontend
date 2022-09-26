@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
 
   orders: any;
   status: string[];
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrdersService) {
     this.status = ['Pending', 'Shipped', 'Cancelled'];
   }
 
@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
   }
 
   getOrders(): void {
-    this.orderService.getOrders()
+    this.orderService.getTableOrders()
     .subscribe(orders => this.orders = orders);
   }
 
