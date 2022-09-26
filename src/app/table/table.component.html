@@ -14,7 +14,8 @@
         <tbody>
             <tr *ngFor="let order of orders">
                 <td> 
-                    <a routerLink="/orderDetails/{{order.id}}">
+                    
+                    <a [routerLink]="['/order-detail/{{order.id}}']">
                     <span>{{order.id}}</span>
                 </a>
              </td>
