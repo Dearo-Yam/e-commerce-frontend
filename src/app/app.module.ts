@@ -9,6 +9,7 @@ import { TotalOrderShippedComponent } from './total-order-shipped/total-order-sh
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { FilterButtonComponent } from './filter-button/filter-button.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { IndexComponent } from './index/index.component';
     TotalOrderShippedComponent,
     NavBarComponent,
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+    FilterButtonComponent
   ],
   imports: [
     BrowserModule,
