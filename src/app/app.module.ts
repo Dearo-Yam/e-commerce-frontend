@@ -38,9 +38,6 @@ import { IndexComponent } from './index/index.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    //Needed to add MatDialogModule here at imports
-    // MatDialogModule,
-    // MatDialogModule
     HttpClientModule
   ],
   providers: [],
