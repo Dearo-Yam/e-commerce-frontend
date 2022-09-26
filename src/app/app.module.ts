@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TableComponent } from './table/table.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
 import { PendingComponent } from './pending/pending.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
@@ -20,6 +22,10 @@ import {  GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,7 @@ import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.componen
     NavBarComponent,
     // OrdersComponent,
     // OrderDetailWindowComponent,
+    OrderDetailWindowComponent,
     PendingComponent,
     HomeComponent,
     IndexComponent,
@@ -37,21 +44,35 @@ import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.componen
     PendingComponent,
     LoginComponent,
     FilterMenuComponent,
-    ShippedOrdersComponent
+    ShippedOrdersComponent,
 
+    LoginComponent
+    
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
  //   BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
+
   ],
   entryComponents: [
   //  OrderDetailWindowComponent,
     HttpClientModule,
-    SocialLoginModule
-    
+    SocialLoginModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+
+
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',
@@ -69,4 +90,5 @@ import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.componen
   },],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

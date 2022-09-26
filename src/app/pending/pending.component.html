@@ -14,10 +14,16 @@
               
                 <!-- <td><a [routerLink]="['/order-detail/',order.orderId]">{{order.orderId}}</a></td> -->
                 <!-- <td><a routerLink="/order-detail/{{order.orderId}}">{{order.orderId}}</a></td> -->
-                <td><a [routerLink]="['/order-detail', order.orderId]">{{order.orderId}}</a></td>
-                <td>{{order.orderStatus}}</td>
-                <td>{{order.dateOrdered}}</td>
+                <td><a [routerLink]="['/order-detail', order.orderid]">{{order.orderid}}</a></td>
+                <td>{{order.orderstatus}}</td>
+                <td>{{order.dateordered}}</td>
                 <!-- <td>{{order.dateShipped}}</td> -->
+
+                <!-- <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
+                <td>{{order.dateordered}}</td>
+                <td>{{order.orderstatus}}</td>
+                <td>{{order.dateordered}}</td>
+                <td>{{order.dateshipped}}</td> -->
             </tr>
         </tbody>
 
