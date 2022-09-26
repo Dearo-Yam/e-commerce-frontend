@@ -26,7 +26,7 @@ export class OrderDetailWindowComponent implements OnInit {
 
   getOrder(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.orderService.getOrder(id)
+    this.orderService.getOrders(id)
     .subscribe(order => this.order = order);
   }
 
