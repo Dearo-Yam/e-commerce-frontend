@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {  GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { MetricsComponent } from './metrics/metrics.component';
     HomeComponent,
     MetricsComponent,
     PendingComponent,
-    LoginComponent
-
+    LoginComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

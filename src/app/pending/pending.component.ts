@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { __param } from 'tslib';
 import { OrdersService } from '../orders.service';
 
 @Component({
@@ -7,13 +9,17 @@ import { OrdersService } from '../orders.service';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent implements OnInit {
-orders:any;
-  constructor(private _ordersService: OrdersService) { }
+
+  
+  pendingOrders: any;
+
+  constructor(private actRouter:ActivatedRoute, private orderService: OrdersService) { 
+  }
+
 
   ngOnInit(): void {
-    this._ordersService.getPendingOrders().subscribe(orders =>{
-      this.orders = orders;
-    })
+    this.orderService.getPendingOrders().subscribe(pendingOrders =>
+      {this.pendingOrders = pendingOrders;})
   }
 
 }
