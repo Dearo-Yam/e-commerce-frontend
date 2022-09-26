@@ -13,7 +13,7 @@
         <tbody>
             <tr *ngFor="let order of orders">
                 <td> 
-                    <a [routerLink]="['/order-detail/{{order.id}}']">
+                    <a routerLink="/order-detail/{{order.id}}">
                     <span>{{order.id}}</span>
                 </a>
              </td>
@@ -27,8 +27,8 @@
     <router-outlet></router-outlet>
 </div>
 
-<!-- 
-<div class="scroll-y, table-scroll">
+
+<!-- <div class="scroll-y, table-scroll">
     <table class="table table-striped">
             <thead>
                 <tr>
