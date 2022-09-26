@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {  GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
+import { FilterMenuComponent } from './filter-menu/filter-menu.component';
+import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MetricsComponent } from './metrics/metrics.component';
     HomeComponent,
     MetricsComponent,
     PendingComponent,
-    LoginComponent
+    LoginComponent,
+    FilterMenuComponent,
+    ShippedOrdersComponent
 
   ],
   imports: [

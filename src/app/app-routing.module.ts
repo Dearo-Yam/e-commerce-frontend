@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { PendingComponent } from './pending/pending.component';
+import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
 import { TableComponent } from './table/table.component';
 
 
 const routes: Routes = [
-  { path: '',redirectTo: '/pending', pathMatch:'full'},
+  { path: '',redirectTo: '/home', pathMatch:'full'},
   { path: 'home', component: HomeComponent},
   {path:'all', component: TableComponent},
-  {path:'login', component: LoginComponent}
+  {path:'login', component: LoginComponent},
+  {path:'shipped', component: ShippedOrdersComponent}
 
 ];
 
