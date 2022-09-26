@@ -5,13 +5,19 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { OrderComponent } from './order/order.component';
 import { PendingComponent } from './pending/pending.component';
 import { TableComponent } from './table/table.component';
+import { LoginComponent } from './login/login.component';
+import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
 
 const routes: Routes = [
   { path: '',redirectTo: '/home', pathMatch:'full'},
   { path: 'home', component: HomeComponent},
   {path:'pending', component: PendingComponent},
   {path: 'order-detail/:id', component: OrderDetailComponent},
-  {path: 'table', component: TableComponent}
+  {path: 'table', component: TableComponent},
+  {path:'all', component: TableComponent},
+  {path:'login', component: LoginComponent},
+  {path:'shipped', component: ShippedOrdersComponent}
+
 ];
 
 @NgModule({
