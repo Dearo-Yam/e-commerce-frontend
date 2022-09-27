@@ -9,17 +9,26 @@ import { OrdersService } from '../orders.service';
 export class MetricsComponent implements OnInit {
   totalOrdersShipped: any;
   avgTime: any;
+  topSellingItems: any;
 
   constructor(private _ordersService: OrdersService) { }
 
   ngOnInit(): void {
     this.getTotalOrdersShipped();
     this.getAvgTimeToShip();
+    this.getTopSellingItems();
 
     setInterval(() => {
       this.getTotalOrdersShipped();
       this.getAvgTimeToShip();
+      this.getTopSellingItems();
     }, 5000);
+  }
+
+  getTopSellingItems() {
+    this._ordersService.getTopSellingItems().subscribe(topSellingItems => {
+      this.topSellingItems = topSellingItems;
+    });
   }
 
   getTotalOrdersShipped() {
