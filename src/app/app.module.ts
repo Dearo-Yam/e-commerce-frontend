@@ -26,6 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MockOrdersComponent } from './mock-orders/mock-orders.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FilterMenuComponent,
     ShippedOrdersComponent,
 
-    LoginComponent
+    LoginComponent,
+     MockOrdersComponent
     
   ],
 

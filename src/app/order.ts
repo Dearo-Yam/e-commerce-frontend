@@ -6,16 +6,16 @@
 //description = other order info (shipping address, shipping time, etc.)
 export interface Order {
     //Order ID
-    id: number;
+    order_id: number;
     /**
      * NEED TO FIX THIS -- Need to take in an item object here
      * 
      */
     itemInfo: string;
     //Order status
-    status: string;
+    order_status: string;
     //Order created
-    orderCreated: string;
+    order_created: string;
     //Order completed
-    orderCompleted: string;
+    order_completed: string;
 }
