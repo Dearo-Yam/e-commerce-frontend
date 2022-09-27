@@ -9,17 +9,31 @@ import { OrdersService } from '../orders.service';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent implements OnInit {
-
-  
-  pendingOrders: any;
-
-  constructor(private actRouter:ActivatedRoute, private orderService: OrdersService) { 
-  }
-
+  orders:any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  tableSizes: any = [3, 6, 9, 12];
+  constructor(private _ordersService: OrdersService) { }
 
   ngOnInit(): void {
-    this.orderService.getPendingOrders().subscribe(pendingOrders =>
-      {this.pendingOrders = pendingOrders;})
+    this._ordersService.getPendingOrders().subscribe(orders =>{
+      this.orders = orders;
+    })
+  }
+
+  getOrders(): void {
+    this._ordersService.getPendingOrders()
+    .subscribe(orders => this.orders = orders);
+  }
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getOrders();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getOrders();
   }
 
 }

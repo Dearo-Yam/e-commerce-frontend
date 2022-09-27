@@ -11,8 +11,6 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TableComponent } from './table/table.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-
-import { OrdersComponent } from './orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
 import { PendingComponent } from './pending/pending.component';
@@ -22,35 +20,53 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {  GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
+import { FilterMenuComponent } from './filter-menu/filter-menu.component';
+import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     TableComponent,
-    // TotalOrderShippedComponent,
+  //  TotalOrderShippedComponent,
     NavBarComponent,
-    OrdersComponent,
+    // OrdersComponent,
+    // OrderDetailWindowComponent,
     OrderDetailWindowComponent,
     PendingComponent,
-    IndexComponent,
     HomeComponent,
+    IndexComponent,
     MetricsComponent,
-    LoginComponent
+    LoginComponent,
+    FilterMenuComponent,
+    ShippedOrdersComponent    
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
+
   entryComponents: [
     OrderDetailWindowComponent,
     HttpClientModule,
-    SocialLoginModule
-    
+    SocialLoginModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
+
   providers: [ {
     provide: 'SocialAuthServiceConfig',
     useValue: {
@@ -67,4 +83,5 @@ import { MetricsComponent } from './metrics/metrics.component';
   },],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
