@@ -4,7 +4,7 @@
         <div class="col-11" ><app-search-bar></app-search-bar></div>
         <div class="col-1"><app-filter-menu></app-filter-menu></div>
       </div> -->
-    <Table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th scope="col">Order Number</th>
@@ -16,14 +16,20 @@
 
         <tbody>
            <tr *ngFor="let order of orders">
-            <td><a [routerLink]="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
-                <td>{{order.orderStatus}}</td>
-                <td>{{order.dateOrdered}}</td>
-                <td>{{order.dateShipped}}</td>
+            <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
+                <td>{{order.orderstatus}}</td>
+                <td>{{order.dateordered}}</td>
+                <td>{{order.dateshipped}}</td>
            </tr>
 
         </tbody>
         
-    </Table>
-    <router-outlet></router-outlet>
+    </table>
+    <div class="d-flex justify-content-center">
+        <pagination-controls
+          previousLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange($event)"
+        >
+        </pagination-controls>
 </div>
