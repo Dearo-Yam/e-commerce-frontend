@@ -16,10 +16,17 @@
 
         <tbody>
            <tr *ngFor="let order of orders">
+<<<<<<< HEAD
             <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
                 <td>{{order.orderstatus}}</td>
                 <td>{{order.dateordered}}</td>
                 <td>{{order.dateshipped}}</td>
+=======
+            <td><a routerLink="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
+                <td>{{order.orderStatus}}</td>
+                <td>{{order.dateOrdered}}</td>
+                <td>{{order.dateShipped}}</td>
+>>>>>>> a5b8d774a5d1b37a942783694a8e37ae8cd9e03c
            </tr>
 
         </tbody>
