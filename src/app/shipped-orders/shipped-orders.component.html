@@ -1,9 +1,12 @@
 <div>
-    <!-- <app-metrics></app-metrics>
-    <div class="row ms-auto">
-        <div class="col-11" ><app-search-bar></app-search-bar></div>
-        <div class="col-1"><app-filter-menu></app-filter-menu></div>
-      </div> -->
+    <div class="row justify-content-left">
+        <div class="input-group rounded w-100">
+            <input [(ngModel)]="filterText" placeholder="Search" class="form-control col-4"  />
+        <div class="input-group-append">
+            <div class="col-1"><app-filter-menu></app-filter-menu></div>
+        </div>
+        </div>
+    </div>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -15,18 +18,16 @@
         </thead>
 
         <tbody>
-           <tr *ngFor="let order of orders">
-<<<<<<< HEAD
-            <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
-                <td>{{order.orderstatus}}</td>
-                <td>{{order.dateordered}}</td>
-                <td>{{order.dateshipped}}</td>
-=======
+           <tr *ngFor="let order of orders |filterOrder: filterText paginate
+           : {
+               itemsPerPage: tableSize,
+               currentPage: page,
+               totalItems: count
+             };">
             <td><a routerLink="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
                 <td>{{order.orderStatus}}</td>
                 <td>{{order.dateOrdered}}</td>
                 <td>{{order.dateShipped}}</td>
->>>>>>> a5b8d774a5d1b37a942783694a8e37ae8cd9e03c
            </tr>
 
         </tbody>

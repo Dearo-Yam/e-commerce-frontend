@@ -8,6 +8,7 @@ import { OrdersService } from '../orders.service';
 })
 export class ShippedOrdersComponent implements OnInit {
   orders:any;
+  filterText = '';
   page: number = 1;
   count: number = 0;
   tableSize: number = 10;
@@ -20,18 +21,12 @@ export class ShippedOrdersComponent implements OnInit {
       })
     }
 
-    getOrders(): void {
-      this._ordersService.getShippedOrders()
-      .subscribe(orders => this.orders = orders);
-    }
     onTableDataChange(event: any) {
       this.page = event;
-      this.getOrders();
     }
     onTableSizeChange(event: any): void {
       this.tableSize = event.target.value;
       this.page = 1;
-      this.getOrders();
     }
 
 }

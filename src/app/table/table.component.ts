@@ -23,21 +23,14 @@ export class TableComponent implements OnInit {
   count: number = 0;
   tableSize: number = 10;
   tableSizes: any = [3, 6, 9, 12];
-
-
-   getOrders(): void {
-     this._ordersService.getPendingOrders()
-     .subscribe(orders => this.orders = orders);
-   }
+  filterText = '';
 
   onTableDataChange(event: any) {
     this.page = event;
-    this.getOrders();
   }
   onTableSizeChange(event: any): void {
     this.tableSize = event.target.value;
     this.page = 1;
-    this.getOrders();
   }
 
 }

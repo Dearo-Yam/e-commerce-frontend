@@ -26,6 +26,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { FilterOrderPipe } from './filter-order.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MetricsComponent,
     LoginComponent,
     FilterMenuComponent,
-    ShippedOrdersComponent    
+    ShippedOrdersComponent,
+    FilterOrderPipe,  
   ],
 
   imports: [
@@ -54,7 +57,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule
   ],
 
   entryComponents: [
