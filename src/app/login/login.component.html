@@ -37,9 +37,6 @@
         class="card-block"
         *ngIf="user.provider === GoogleLoginProvider.PROVIDER_ID"
       >
-        <button class="btn" (click)="refreshGoogleToken()">
-          Refresh google token
-        </button>
       </div>
     </div>
     <router-outlet></router-outlet>
