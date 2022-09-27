@@ -28,6 +28,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { FilterOrderPipe } from './filter-order.pipe';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -58,20 +59,20 @@ import { FilterOrderPipe } from './filter-order.pipe';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
 
   entryComponents: [
     OrderDetailWindowComponent,
     HttpClientModule,
-    SocialLoginModule,
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule
   ],
-
-  providers: [ {
+  providers: [ 
+    AuthGuard,{
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: true,
