@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
-import { OrderService } from '../order.service';
+
 import { __param } from 'tslib';
 import { OrdersService } from '../orders.service';
 
@@ -10,33 +10,34 @@ import { OrdersService } from '../orders.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  orders:any;
+    constructor(private _ordersService: OrdersService) { }
+  
+    ngOnInit(): void {
+      this._ordersService.getAllOrders().subscribe(orders =>{
+        this.orders = orders;
+      })
+    }
 
-  orders: any;
-  status: string[];
-  constructor(private orderService: OrdersService) {
-    this.status = ['Pending', 'Shipped', 'Cancelled'];
+
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  tableSizes: any = [3, 6, 9, 12];
+
+   getOrders(): void {
+     this._ordersService.getPendingOrders()
+     .subscribe(orders => this.orders = orders);
+   }
+
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getOrders();
   }
-
-  ngOnInit(): void {
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
     this.getOrders();
   }
 
-  getOrders(): void {
-    this.orderService.getTableOrders()
-    .subscribe(orders => this.orders = orders);
-  }
-
-
-  //  onUpdate(s: string): void{
-  //   this.orderService.updateOrderStatus()
-  //   //this.s = s;
-  //  }
-
-  // ngOnInit(): void {
-  //   this.orderService.getPendingOrders().subscribe(orders =>
-  //     {
-  //       this.orders = orders;
-  //     })
-
-  // }
 }

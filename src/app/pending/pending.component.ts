@@ -9,17 +9,13 @@ import { OrdersService } from '../orders.service';
   styleUrls: ['./pending.component.css']
 })
 export class PendingComponent implements OnInit {
-
-  
-  pendingOrders: any;
-
-  constructor(private actRouter:ActivatedRoute, private orderService: OrdersService) { 
-  }
-
+orders:any;
+  constructor(private _ordersService: OrdersService) { }
 
   ngOnInit(): void {
-    this.orderService.getPendingOrders().subscribe(pendingOrders =>
-      {this.pendingOrders = pendingOrders;})
+    this._ordersService.getPendingOrders().subscribe(orders =>{
+      this.orders = orders;
+    })
   }
 
 }
