@@ -10,6 +10,7 @@ import { OrdersService } from '../orders.service';
 })
 export class PendingComponent implements OnInit {
   orders:any;
+  filterText = '';
   page: number = 1;
   count: number = 0;
   tableSize: number = 10;
@@ -21,19 +22,13 @@ export class PendingComponent implements OnInit {
       this.orders = orders;
     })
   }
-
-  getOrders(): void {
-    this._ordersService.getPendingOrders()
-    .subscribe(orders => this.orders = orders);
-  }
   onTableDataChange(event: any) {
     this.page = event;
-    this.getOrders();
+
   }
   onTableSizeChange(event: any): void {
     this.tableSize = event.target.value;
     this.page = 1;
-    this.getOrders();
   }
 
 }

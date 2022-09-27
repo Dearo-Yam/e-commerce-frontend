@@ -13,16 +13,22 @@ import { Order }  from '../order';
 export class OrderDetailWindowComponent implements OnInit {
 
   orders: any
+  id:any;
 
   constructor(
     private route: ActivatedRoute,
     private orderService: OrdersService,
     private location: Location
-  ) {}
+  ) {this.id =this.route.snapshot.params['id'];}
 
   ngOnInit(): void {
-    this.getOrder();
-  }
+    
+   console.log(this.id);
+   
+      this.orderService.getOrders(this.id).subscribe(order =>{
+        this.orders = order;
+      })
+    }
 
   getOrder(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
