@@ -41,39 +41,32 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     IndexComponent,
     MetricsComponent,
-    PendingComponent,
     LoginComponent,
     FilterMenuComponent,
-    ShippedOrdersComponent,
-
-    LoginComponent
-    
+    ShippedOrdersComponent    
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
- //   BrowserAnimationsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgxPaginationModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule
-
   ],
+
   entryComponents: [
-  //  OrderDetailWindowComponent,
+    OrderDetailWindowComponent,
     HttpClientModule,
     SocialLoginModule,
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule,
-
-
+    MatPaginatorModule
   ],
+
   providers: [ {
     provide: 'SocialAuthServiceConfig',
     useValue: {

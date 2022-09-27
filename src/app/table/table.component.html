@@ -21,7 +21,7 @@
                     totalItems: count
                   };">
                 <td>
-                    <a [routerLink]="['/order-detail', order.orderid]"> {{order.orderid}}
+                    <a [routerLink]="['/order-detail', order.orderId]"> {{order.orderId}}
                 </a>
              </td>
                 <td>{{order.status}}</td>
@@ -36,14 +36,15 @@
 
 
 <div class="scroll-y, table-scroll">
-    <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Order Number</th>
-                    <th>Create Day</th>
-                    <th>Order Status</th>
-                </tr>
-            </thead>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Order Number</th>
+                <th scope="col">Order Status</th>
+                <th scope="col">Order Created</th>
+                <th scope="col">Order Completed</th>
+            </tr>
+        </thead>
 
             <tbody>
                 <tr *ngFor="let order of orders| paginate
@@ -53,20 +54,15 @@
                     totalItems: count
                   };">
 
-                    <td><a [routerLink]="['/order-detail/',order.orderid]">{{order.orderid}}</a></td>
-                    <td>{{order.dateordered}}</td>
-                    <td>{{order.orderstatus}}</td>
-
+                    <td><a routerLink="['/order-detail/',order.orderId]">{{order.orderId}}</a></td>
+                    <td>{{order.orderStatus}}</td>
+                    <td>{{order.dateOrdered}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
         <div class="d-flex justify-content-center">
-            <pagination-controls
-              previousLabel="Prev"
-              nextLabel="Next"
-              (pageChange)="onTableDataChange($event)"
-            >
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
             </pagination-controls>
         
     
