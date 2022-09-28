@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 COPY package.json ./
 COPY . ./
 RUN npm install
-RUN npm run build --prod
+RUN npm run build
 
 FROM nginx:1.12-alpine
 COPY --from=build-deps /usr/src/app/dist/front-end /usr/share/nginx/html/
