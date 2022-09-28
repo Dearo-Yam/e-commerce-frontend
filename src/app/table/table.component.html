@@ -22,7 +22,7 @@
         </thead>
 
             <tbody>
-                <tr *ngFor="let order of orders| filterOrder: filterText |paginate
+                <tr class="mat-row" *ngFor="let order of orders| filterOrder: filterText |paginate
                 : {
                     itemsPerPage: tableSize,
                     currentPage: page,

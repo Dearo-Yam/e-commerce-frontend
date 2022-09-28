@@ -28,6 +28,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { FilterOrderPipe } from './filter-order.pipe';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FilterOrderPipe } from './filter-order.pipe';
     LoginComponent,
     FilterMenuComponent,
     ShippedOrdersComponent,
-    FilterOrderPipe,  
+    FilterOrderPipe,
+    LogoutComponent,  
   ],
 
   imports: [
