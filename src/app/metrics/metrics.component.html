@@ -45,8 +45,28 @@
             <div class="card-header py-2 bg-white text-center">
                 Weekly Total Shipped
             </div>
-            <div class="card-body d-flex align-self-center align-items-center">
-                <h2 style="font-size: 50px;">{{totalOrdersShipped}}</h2>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm table-border width=100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">M</th>
+                                <th class="text-center">T</th>
+                                <th class="text-center">W</th>
+                                <th class="text-center">T</th>
+                                <th class="text-center">F</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center" *ngFor="let weeklyShip of weeklyShipping">{{weeklyShip[1]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-end">
+                <h5>Total: {{getSum()}}</h5>
             </div>
         </div>
     </div>

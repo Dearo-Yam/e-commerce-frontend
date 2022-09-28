@@ -10,6 +10,8 @@ export class MetricsComponent implements OnInit {
   totalOrdersShipped: any;
   avgTime: any;
   topSellingItems: any;
+  weeklyShipping: any;
+  totalWeeklyShipped: any;
 
   constructor(private _ordersService: OrdersService) { }
 
@@ -17,12 +19,28 @@ export class MetricsComponent implements OnInit {
     this.getTotalOrdersShipped();
     this.getAvgTimeToShip();
     this.getTopSellingItems();
+    this.getWeeklyShipping();
 
     setInterval(() => {
       this.getTotalOrdersShipped();
       this.getAvgTimeToShip();
       this.getTopSellingItems();
+      this.getWeeklyShipping();
     }, 5000);
+  }
+
+  getSum() : number {
+    let sum = 0;
+    for(let i = 0; i < this.weeklyShipping.length; i++) {
+      sum += this.weeklyShipping[i][1];
+    }
+    return sum;
+  }
+
+  getWeeklyShipping() {
+    this._ordersService.getWeeklyShipping().subscribe(weeklyShipping => {
+      this.weeklyShipping = weeklyShipping;
+    })
   }
 
   getTopSellingItems() {
