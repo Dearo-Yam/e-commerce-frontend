@@ -1,37 +1,65 @@
 <div>
-    <Table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Order Number</th>
-                <th scope="col">Status</th>
-                <th scope="col">Order Created</th>
-                <th scope="col">Order Completed</th>
-            </tr>
-        </thead>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+				<th data-column="OrderNumber" data-order="desc">Order Number &#9650</th>
+				<th data-column="Status" data-order="desc">Status &#9650</th>
+				<th data-column="OrderCreated" data-order="desc">Order Created &#9650</th>
+				<th data-column="OrderCompleted" data-order="desc">Order Completed &#9650</th>
+      </tr>
+    </thead>
 
-        <tbody>
-            <tr>
-                <td> <a href="#">1</a> </td>
-                <td>Pending</td>
-                <td>09-15-2022</td>
-                <td>09-20-2022</td>
-            </tr>
-            
-            <tr>
-                <td><a href="#">2</a></td>
-                <td>Shipped</td>
-                <td>01-08-1997</td>
-                <td>01-11-1997</td>
-            </tr>
+    <tbody id="myTable">
 
-            <tr>
-                <td><a href="#">3</a></td>
-                <td>Shipped</td>
-                <td>05-22-2011</td>
-                <td>05-26-2011</td>
-            </tr>
+    </tbody>
 
-        </tbody>
-        
-    </Table>
+  </table>
+  <script>
+	var myArray = [
+    { 'Order Number': ' <a href="#">1</a>', 'Status': 'Pending', 'Order Created': '09-15-2022', 'Order Completed': '09-20-2022' },
+    { 'Order Number': ' <a href="#">2</a>', 'Status': 'Shipped', 'Order Created': '01-08-1997', 'Order Completed': '01-11-1997' },
+    { 'Order Number': ' <a href="#">3</a>', 'Status': 'Shipped', 'Order Created': '05-22-2011', 'Order Completed': '05-26-2011' },
+
+
+	]
+
+	$('th').on('click', function(){
+		var column = $(this).data('column')
+		var order = $(this).data('order')
+		var text = $(this).html()
+		text = text.substring(0, text.length - 1)
+
+		if(order == 'desc'){
+			$(this).data('order', "asc")
+			myArray = myArray.sort((a,b) => a[column] > b[column] ? 1 : -1)
+			text += '&#9660'
+
+		}else{
+			$(this).data('order', "desc")
+			myArray = myArray.sort((a,b) => a[column] < b[column] ? 1 : -1)
+			text += '&#9650'
+
+		}
+		$(this).html(text)
+		buildTable(myArray)
+	})
+		
+	buildTable(myArray)
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+		table.innerHTML = ''
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].OrderNumber}</td>
+							<td>${data[i].Status}</td>
+							<td>${data[i].OrderCreated}</td>
+							<td>${data[i].OrderCompleted}</td>
+					  </tr>`
+			table.innerHTML += row
+
+		}
+	}
+
+  </script>
 </div>
