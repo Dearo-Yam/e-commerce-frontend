@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this._authService.authState.subscribe((user) => {
       this.user = user;
         localStorage.setItem('APP_TOKEN', JSON.stringify(this.user.authToken));
-        this.router.navigate(['/all']);
+        this.router.navigate(['/products']);
 
     });
   }
