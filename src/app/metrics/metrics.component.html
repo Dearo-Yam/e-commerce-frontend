@@ -31,17 +31,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Phone</td>
-                                <td class="text-end"><b>5</b></td>
-                            </tr>
-                            <tr>
-                                <td>Computer</td>
-                                <td class="text-end"><b>5</b></td>
-                            </tr>
-                            <tr>
-                                <td>Keyboard</td>
-                                <td class="text-end"><b>5</b></td>
+                            <tr *ngFor="let topSellingItem of topSellingItems">
+                                <td>{{topSellingItem[0]}}</td>
+                                <td class="text-end"><b>{{topSellingItem[1]}}</b></td>
                             </tr>
                         </tbody>
                     </table>
@@ -50,7 +42,7 @@
         </div>
 
         <div class="card col-3 mx-2 py-2" style="width: 18rem;">
-            <div class="card-header py-2 bg-white text-center" style="font-size: 20px;">
+            <div class="card-header py-2 bg-white text-center">
                 Weekly Total Shipped
             </div>
             <div class="card-body d-flex align-self-center align-items-center">

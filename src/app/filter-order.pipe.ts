@@ -5,14 +5,21 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterOrderPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(value: {orderId:number, userId: number, addressId:number,
+  price:number,creditCardId:number, dateOrdered:Date, dateShipped:Date, orderStatus:string}[], args: string): any {
+    
     if(!value) return null;
     if(!args) return value;
 
-    return value.filter(function(item:any){
-      return JSON.stringify(item)
-      .includes(args);
-    });
+    
+    args = args.toLowerCase();
+    return value.filter((order) => {
+      return order.orderStatus.toLowerCase().includes(args) || order.dateOrdered.toString().includes(args) || order.orderId.toString().includes(args);
+
+    })
+
+
+   
   }
 
 }

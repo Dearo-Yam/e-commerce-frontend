@@ -28,7 +28,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { FilterOrderPipe } from './filter-order.pipe';
-import { LogoutComponent } from './logout/logout.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import { LogoutComponent } from './logout/logout.component';
     FilterMenuComponent,
     ShippedOrdersComponent,
     FilterOrderPipe,
-    LogoutComponent,  
+    // LogoutComponent,  
   ],
 
   imports: [
@@ -60,20 +60,20 @@ import { LogoutComponent } from './logout/logout.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
 
   entryComponents: [
     OrderDetailWindowComponent,
     HttpClientModule,
-    SocialLoginModule,
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule
   ],
-
-  providers: [ {
+  providers: [ 
+    AuthGuard,{
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: true,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,5 +12,5 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }
