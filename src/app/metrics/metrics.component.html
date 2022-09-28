@@ -43,30 +43,26 @@
 
         <div class="card col-3 mx-2 py-2" style="width: 18rem;">
             <div class="card-header py-2 bg-white text-center">
-                Weekly Total Shipped
+                Daily Total Orders Shipped
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-sm table-border width=100%">
                         <thead>
                             <tr>
-                                <th class="text-center">M</th>
-                                <th class="text-center">T</th>
-                                <th class="text-center">W</th>
-                                <th class="text-center">T</th>
-                                <th class="text-center">F</th>
+                                <th class="text-center" *ngFor="let weekDate of weekDates">{{weekDate}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-center" *ngFor="let weeklyShip of weeklyShipping">{{weeklyShip[1]}}</td>
+                                <td class="text-center" *ngFor="let weeklyShip of weeklyShipping">{{weeklyShip}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="text-end">
-                <h5>Total: {{getSum()}}</h5>
+                <h5>Weekly Total: {{getSum()}}</h5>
             </div>
         </div>
     </div>
