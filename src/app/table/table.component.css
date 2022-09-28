@@ -22,11 +22,11 @@
 }
 
 .mat-row:nth-child(odd):hover{
-    background-color: #f2f2f2;
+    background-color: #c0bfc0;
     transition: .5s;
 }
 
 .mat-row:nth-child(even):hover{
-    background-color: #f2f2f2;
+    background-color: #c0bfc0;
     transition: .5s;
 }

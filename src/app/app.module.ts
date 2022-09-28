@@ -47,7 +47,8 @@ import { AuthGuard } from './shared/guard/auth.guard';
     LoginComponent,
     FilterMenuComponent,
     ShippedOrdersComponent,
-    FilterOrderPipe,  
+    FilterOrderPipe,
+    // LogoutComponent,  
   ],
 
   imports: [

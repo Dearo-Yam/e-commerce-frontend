@@ -1,4 +1,5 @@
 <div>
+    <div class="sticky-top"><app-nav-bar></app-nav-bar></div>
     <div>
         <app-metrics></app-metrics>
     </div>
@@ -23,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let order of orders| filterOrder: filterText |paginate
+                <tr class="mat-row" *ngFor="let order of orders| filterOrder: filterText |paginate
                 : {
                     itemsPerPage: tableSize,
                     currentPage: page,
