@@ -6,8 +6,6 @@ import { HomeComponent } from './home/home.component';
 import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
 
 import { OrderDetailWindowComponent } from './order-detail-window/order-detail-window.component';
-//import { OrdersComponent } from './orders/orders.component';
-import { OrderComponent } from './order/order.component';
 
 import { PendingComponent } from './pending/pending.component';
 import { AuthGuard } from './shared/guard/auth.guard';
