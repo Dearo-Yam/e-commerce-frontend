@@ -1,8 +1,9 @@
 FROM node as build-deps
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-RUN npm install
+#RUN npm install
 COPY . .
+RUN npm install -f angularx-social-login
 RUN npm run build
 
 FROM nginx:stable-alpine
