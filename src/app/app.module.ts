@@ -26,6 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FilterMenuComponent,
     ShippedOrdersComponent,
     LoginComponent,
+    MessagesComponent,
     
   ],
 

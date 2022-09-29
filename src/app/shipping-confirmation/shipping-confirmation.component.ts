@@ -51,7 +51,6 @@ export class ShippingConfirmationComponent implements OnInit {
     .subscribe(customer => this.customer = customer);
   }
 
-
 }
 
 

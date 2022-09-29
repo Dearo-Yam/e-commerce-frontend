@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 import { OrdersService } from '../orders.service';
-import { Order }  from '../order';
-
-
-
 
 @Component({
   selector: 'app-order-detail-window',

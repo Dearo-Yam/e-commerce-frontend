@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { MessageService } from './message.service';
 
 
 @Injectable({
@@ -10,7 +11,10 @@ export class OrdersService {
 
   baseUrl = 'http://localhost:8080/api/orders';
 
-  constructor(private http: HttpClient) {}
+  constructor (
+              private http: HttpClient,
+              private messageService: MessageService,
+              ) {}
 
   getTotalOrdersShipped() {
     return this.http.get<any>(`${this.baseUrl}/shipped/count`);
@@ -54,6 +58,7 @@ export class OrdersService {
     // const headers = new HttpHeaders().append('header', 'value');
     // const params = new HttpParams().append('id', id);
     //      , updatedStatus, { headers, params}
+    this.messageService.add('This order has been shipped successfully');
     return this.http.put<any>(`${this.baseUrl}/${id}/ship`, id);
   }
 }
