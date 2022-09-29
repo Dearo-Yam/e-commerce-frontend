@@ -18,13 +18,18 @@
   
       
     </div>
+    <div *ngIf="user" >
+      <app-nav-bar></app-nav-bar>
+    </div>
     <div *ngIf="user" class="card text-center">
       <!-- <div class="card-block"></div>
       <img
         *ngIf="user.photoUrl"
         class="card-img-top img-responsive photo"
+        width="40"
         src="{{ user.photoUrl }}"
       />
+    </div>
       <div class="card-block">
         <h4 class="card-title">{{ user.name }}</h4>
         <p class="card-text">{{ user.email }}</p>

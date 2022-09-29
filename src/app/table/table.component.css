@@ -20,3 +20,13 @@
 .btn-nisum:hover {
     color: #fff;
 }
+
+.mat-row:nth-child(odd):hover{
+    background-color: #c0bfc0;
+    transition: .5s;
+}
+
+.mat-row:nth-child(even):hover{
+    background-color: #c0bfc0;
+    transition: .5s;
+}
