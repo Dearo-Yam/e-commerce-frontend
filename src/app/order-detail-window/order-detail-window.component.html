@@ -1,4 +1,3 @@
-<p>Order-detail-window works!</p>
 <!-- orders GO HERE -->
 <div *ngIf="customer">
     <h1 style="font-size: 40px;">Order Details</h1>
@@ -33,7 +32,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr *ngFor="let item of items">
                             <td>
                                 <!-- item.* HAS TO MATCH API call variable -->
@@ -50,9 +48,12 @@
                 </Table>
                 <!-- (click)="shipOrder()"  -->
                <!-- [routerLink]="['/confirm-ship/']" -->
-                <button [routerLink]="['/confirm-ship/', customer.order_id]">
+               <div *ngIf="checkStatus()">
+                <button  [routerLink]="['/confirm-ship/', customer.order_id]">
                     Ship Order
                 </button>
+            </div>
+           
            
 
             </div>

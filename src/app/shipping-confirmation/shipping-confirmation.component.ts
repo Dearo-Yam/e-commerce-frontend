@@ -49,6 +49,7 @@ export class ShippingConfirmationComponent implements OnInit {
   shipOrder(): void {
     this.orderService.shipOrder(this.id)
     .subscribe(customer => this.customer = customer);
+    this.goBack();
   }
 
 }

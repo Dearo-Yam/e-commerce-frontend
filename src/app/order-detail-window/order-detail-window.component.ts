@@ -14,6 +14,8 @@ export class OrderDetailWindowComponent implements OnInit {
   items: any;
   customer: any;
   id: any;
+  status: boolean = false;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +33,14 @@ export class OrderDetailWindowComponent implements OnInit {
     })
     this.getCustomerInfo();
     
+  }
+
+  checkStatus(): boolean {
+    if(this.customer.status === "Pending") {
+      this.status = true;
+      return this.status;
+    }
+    return this.status;
   }
 /**
  * CHANGE THIS BACK TO BE ABLE TO COMMUNICATE WITH BACKEND WHENEVER FINISHED WITH MOCK DASHBOARD WORK
