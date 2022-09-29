@@ -46,4 +46,8 @@ export class OrdersService {
   {
     return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
+
+  getWeeklyShipping(week: number) {
+    return this.http.get<any>(`${this.baseUrl}/weekly/${week}`)
+  }
 }
