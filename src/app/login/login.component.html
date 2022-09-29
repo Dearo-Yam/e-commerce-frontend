@@ -1,5 +1,33 @@
-<div class="jumbotron bg-transparent text-center">
-    <div *ngIf="!user" class="card text-center">
+
+<div class="bg-transparent text-center">
+ 
+  <div *ngIf="!user">
+    <nav class="navbar navbar-light bg-light" routerLinkActive="active" routerLink="/pending"><img src="assets/nisum-logo.png"  height="40" class="d-inline-block align-text-top"/></nav>
+    <div class=" d-flex justify-content-center align-items-center">
+    <div class="card mt-5 p-5 border-dark"> 
+      <div class="card-title">
+        <h1>Google Sign In</h1>
+      </div>
+      <div class="card-body">
+        
+        <button 
+        class="btn btn-outline-dark"
+        (click)="signInWithGL()"
+      >
+      <div></div>
+      <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+      Sign-In With Google
+    </button>
+      </div>
+  </div>
+    </div>
+    
+
+  </div>
+
+
+  
+  <!-- <div *ngIf="!user" class="card text-center">
       <div class="card-block">
         <h4 class="card-title">Not signed in</h4>
         <p class="card-text">Sign in with</p>
@@ -17,17 +45,37 @@
       </div>
   
       
-    </div>
-    <div *ngIf="user" >
-      <app-nav-bar></app-nav-bar>
-    </div>
-    <div *ngIf="user" class="card text-center">
+    </div> -->
 
-      <div class="card-block">
+    <div *ngIf="user" >
+      <!-- <nav class="navbar navbar-light bg-light" routerLinkActive="active" routerLink="/pending"><img src="assets/nisum-logo.png"  height="40" class="d-inline-block align-text-top"/></nav> -->
+      
+      <!-- <div class="d-flex justify-content-center align-items-center">
+        <div class="card mt-5 w-50">
+          <div class="card-img-top ">
+            <img
+            *ngIf="user.photoUrl"
+            class="card-img-top img-responsive photo"
+            src="{{ user.photoUrl }}"
+          />
+          </div>
+          
+          <div class="card-body ">
+          <h1 class="card-text">{{ user.name }}</h1>
+          <div class="card-text">{{ user.email }}</div>
+          <div class="card-text pb-2">Logged in with {{ user.provider }}</div>
+          <button class="btn btn-danger border-dark" (click)="signOut()">Sign out</button>
+        </div>
+        </div>
+      </div> -->
+      
+      <!-- <app-logout [currUser]=user></app-logout> -->
+      
+    
+      <!-- <div class="card-block">
       <img
         *ngIf="user.photoUrl"
         class="card-img-top img-responsive photo"
-        width="40"
         src="{{ user.photoUrl }}"
       />
     </div>
@@ -43,7 +91,11 @@
         class="card-block"
         *ngIf="user.provider === GoogleLoginProvider.PROVIDER_ID"
       >
-      </div>
+      </div> -->
+      {{signOut()}}
+      <!-- <app-logout (loggingOut)="parentMethod()"></app-logout> -->
     </div>
+    
     <router-outlet></router-outlet>
   </div>
+  
