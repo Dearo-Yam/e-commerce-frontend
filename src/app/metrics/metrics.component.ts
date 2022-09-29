@@ -12,8 +12,10 @@ export class MetricsComponent implements OnInit {
   avgTime: any;
   topSellingItems: any;
   weeklyShipping = [];
+  previousWeeklyShipping = [];
   totalWeeklyShipped: any;
   weekDates: string[] = [];
+  previousWeekDates: string[] = [];
 
   constructor(private _ordersService: OrdersService) { }
 
@@ -45,24 +47,27 @@ export class MetricsComponent implements OnInit {
     let currDayOfWeek = new Date().getDay();
 
     let startOfWeek = new Date();
-    startOfWeek.setDate(startOfWeek.getDate() - currDayOfWeek + 1);
+    startOfWeek.setDate(startOfWeek.getDate() - currDayOfWeek - 7);
     
-    for(let i = 1; i < 6; i++) {
-      if(i <= currDayOfWeek) {
-        this.weekDates[i - 1] = (startOfWeek.getMonth() + 1) + "/" + startOfWeek.getDate();
-      }
-      else {
-        let previousWeek = new Date(startOfWeek);
-        previousWeek.setDate(previousWeek.getDate() - 7);
-        this.weekDates[i - 1] = (previousWeek.getMonth() + 1) + "/" + previousWeek.getDate();
-      }
+    for(let i = 0; i < 7; i++) {
+      this.previousWeekDates[i] = (startOfWeek.getMonth() + 1) + "/" + startOfWeek.getDate();
+      
+      startOfWeek.setDate(startOfWeek.getDate() + 1);
+    }
+
+    for(let i = 0; i < 7; i++) {
+      this.weekDates[i] = (startOfWeek.getMonth() + 1) + "/" + startOfWeek.getDate();
       
       startOfWeek.setDate(startOfWeek.getDate() + 1);
     }
   }
 
   getWeeklyShipping() {
-    this._ordersService.getWeeklyShipping().subscribe(weeklyShipping => {
+    this._ordersService.getWeeklyShipping(1).subscribe(weeklyShipping => {
+      this.previousWeeklyShipping = weeklyShipping[0];
+    })
+
+    this._ordersService.getWeeklyShipping(0).subscribe(weeklyShipping => {
       this.weeklyShipping = weeklyShipping[0];
     })
   }

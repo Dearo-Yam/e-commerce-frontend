@@ -19,7 +19,7 @@
       
     </div>
     <div *ngIf="user" class="card text-center">
-      <div class="card-block"></div>
+      <!-- <div class="card-block"></div>
       <img
         *ngIf="user.photoUrl"
         class="card-img-top img-responsive photo"
@@ -37,7 +37,8 @@
         class="card-block"
         *ngIf="user.provider === GoogleLoginProvider.PROVIDER_ID"
       >
-      </div>
+      </div> -->
+      {{signOut()}}
     </div>
     <router-outlet></router-outlet>
   </div>
