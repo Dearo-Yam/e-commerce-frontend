@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterOrderPipe } from './filter-order.pipe';
 import { AuthGuard } from './shared/guard/auth.guard';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
     FilterMenuComponent,
     ShippedOrdersComponent,
     FilterOrderPipe,
-    // LogoutComponent,  
+   
   ],
 
   imports: [

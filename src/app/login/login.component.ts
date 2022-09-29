@@ -16,13 +16,21 @@ export class LoginComponent implements OnInit {
   user: SocialUser | undefined;
   GoogleLoginProvider = GoogleLoginProvider;
 
+
   constructor(private readonly _authService: SocialAuthService, private router: Router) {}
 
   ngOnInit() {
     this._authService.authState.subscribe((user) => {
       this.user = user;
         localStorage.setItem('APP_TOKEN', JSON.stringify(this.user.authToken));
-        this.router.navigate(['/products']);
+        if(this.user.authToken!=null){
+          console.log(this.user.authToken)
+          this.router.navigate(['/pending']);
+        }  
+        
+          
+        
+        
 
     });
   }
@@ -30,18 +38,18 @@ export class LoginComponent implements OnInit {
   signInWithGL(): void {
     
     this._authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-
+     
   }
 
   signOut(): void {
     this._authService.signOut();
     localStorage.removeItem('APP_TOKEN');
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
   }
 
   refreshGoogleToken(): void {
     this._authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
 
   }
-  
+
 }
