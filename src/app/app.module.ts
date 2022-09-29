@@ -18,7 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import {  GoogleLoginProvider } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
@@ -26,7 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { MockOrdersComponent } from './mock-orders/mock-orders.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { MockOrdersComponent } from './mock-orders/mock-orders.component';
   //  TotalOrderShippedComponent,
     NavBarComponent,
     // OrdersComponent,
-    // OrderDetailWindowComponent,
     OrderDetailWindowComponent,
     PendingComponent,
     HomeComponent,
@@ -46,9 +45,7 @@ import { MockOrdersComponent } from './mock-orders/mock-orders.component';
     LoginComponent,
     FilterMenuComponent,
     ShippedOrdersComponent,
-
     LoginComponent,
-     MockOrdersComponent
     
   ],
 
@@ -62,11 +59,11 @@ import { MockOrdersComponent } from './mock-orders/mock-orders.component';
     NgxPaginationModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
 
   ],
   entryComponents: [
-  //  OrderDetailWindowComponent,
+    //OrderDetailWindowComponent,
     HttpClientModule,
     SocialLoginModule,
     MatPaginatorModule,
@@ -90,7 +87,8 @@ import { MockOrdersComponent } from './mock-orders/mock-orders.component';
       ],
     } as SocialAuthServiceConfig,
   },],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 
 export class AppModule { }

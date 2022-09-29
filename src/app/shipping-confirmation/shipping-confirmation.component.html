@@ -1,0 +1,16 @@
+<p>shipping-confirmation works!</p>
+<div class="card-container">
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Confirmation</h1>
+        </div>
+        <div class="card-body">
+           <h2>Order#: {{customer.order_id}}</h2>
+           <h2><strong>Are you sure you want to ship the above order?</strong></h2>
+            <button (click)="shipOrder()">
+               Ship Order
+            </button>
+        </div>
+    </div>
+</div>
