@@ -55,7 +55,6 @@ export class ShippingConfirmationComponent implements OnInit {
       this.goBack();
     }, 1500);
     
-  
   }
 
 }
