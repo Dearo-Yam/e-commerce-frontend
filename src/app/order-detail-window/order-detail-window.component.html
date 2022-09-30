@@ -1,18 +1,20 @@
-<p>Order-detail-window works!</p>
-
-<div *ngIf= "orders">
+<!-- orders GO HERE -->
+<div *ngIf="customer">
     <h1 style="font-size: 40px;">Order Details</h1>
-    
-    <h2>Order#: {{orders.orderId}}</h2>
+    <span>
+        <h2 class="customer-heading">Order#: {{customer.order_id}}</h2>
+        <h2 class="customer-heading" id="order-status">Order status: {{customer.status}}</h2>
+        <h2 class="customer-heading" id="order-created">Order created: {{customer.date_ordered}}</h2>
+    </span>
     <div class="card-container">
 
         <div class="card">
             <div class="card-header">
                 <h1>Customer Details</h1>
             </div>
-            <div class="card-body">
-                <h3>Customer name: Name</h3>
-                <h3>Customer address: Address</h3>
+            <div *ngIf="customer" class="card-body">
+                <h3>Customer name: {{customer.name}}</h3>
+                <h3>Customer address: {{customer.address1}}&nbsp;{{customer.address2}}</h3>
                 <h3>Any other info: [info]</h3>
             </div>
         </div>
@@ -24,37 +26,41 @@
                 <Table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Item ID</th>
-                            <th scope="col">Item Name</th>
-                            <th scope="col">Item Quantity</th>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Item Quantity</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let item of items">
                             <td>
-                                123
+                                <!-- item.* HAS TO MATCH API call variable -->
+                                {{item.upc}}
                             </td>
                             <td>
-                                item1
+                                {{item.name}}
                             </td>
                             <td>
-                                1000
+                                {{item.Quantity}}
                             </td>
                         </tr>
                     </tbody>
                 </Table>
-                <button>
+                <!-- (click)="shipOrder()"  -->
+               <!-- [routerLink]="['/confirm-ship/']" -->
+               <div *ngIf="checkStatus()">
+                <button  [routerLink]="['/confirm-ship/', customer.order_id]">
                     Ship Order
                 </button>
-                <button style="margin-left: 10px;">
-                    Cancel Order
-                </button>
+            </div>
+           
+           
+
             </div>
         </div>
-    
-    </div>
 
+    </div>
 </div>
 
 
-<button type="button" (click)="goBack()">Go Back</button>
+<button type="button" id="go-back-button" (click)="goBack()">Go Back</button>
