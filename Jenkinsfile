@@ -18,6 +18,7 @@ pipeline {
         stage('Package with nginx') {
             agent {
                 docker {
+                    label 'docker'
                     image 'nginx:stable'
                     args '-v $HOME/.m2:/root/.m2'
                 }
