@@ -1,0 +1,66 @@
+<!-- orders GO HERE -->
+<div *ngIf="customer">
+    <h1 style="font-size: 40px;">Order Details</h1>
+    <span>
+        <h2 class="customer-heading">Order#: {{customer.order_id}}</h2>
+        <h2 class="customer-heading" id="order-status">Order status: {{customer.status}}</h2>
+        <h2 class="customer-heading" id="order-created">Order created: {{customer.date_ordered}}</h2>
+    </span>
+    <div class="card-container">
+
+        <div class="card">
+            <div class="card-header">
+                <h1>Customer Details</h1>
+            </div>
+            <div *ngIf="customer" class="card-body">
+                <h3>Customer name: {{customer.name}}</h3>
+                <h3>Customer address: {{customer.address1}}&nbsp;{{customer.address2}}</h3>
+                <h3>Any other info: [info]</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>Items</h2>
+            </div>
+            <div class="card-body">
+                <Table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Item Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of items">
+                            <td>
+                                <!-- item.* HAS TO MATCH API call variable -->
+                                {{item.upc}}
+                            </td>
+                            <td>
+                                {{item.name}}
+                            </td>
+                            <td>
+                                {{item.Quantity}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+                <!-- (click)="shipOrder()"  -->
+               <!-- [routerLink]="['/confirm-ship/']" -->
+               <div *ngIf="checkStatus()">
+                <button  [routerLink]="['/confirm-ship/', customer.order_id]">
+                    Ship Order
+                </button>
+            </div>
+           
+           
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<button type="button" id="go-back-button" (click)="goBack()">Go Back</button>
