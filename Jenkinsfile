@@ -7,8 +7,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'wms_backend_pwd', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh """
                     docker login --username $USERNAME --password $PASSWORD
-                    docker build -t $USERNAME/wms-frontend:${env.BUILD_NUMBER} .
-                    docker push $USERNAME/wms-frontend:${env.BUILD_NUMBER}
+                    docker build -t $USERNAME/wms_frontend:${env.BUILD_NUMBER} .
+                    docker push $USERNAME/wms_frontend:${env.BUILD_NUMBER}
                     docker image prune -f
                     """
                 }
