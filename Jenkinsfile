@@ -11,7 +11,7 @@ pipeline {
         stage('Build the application with Nodejs') {
             steps {
                 sh 'npm version'
-                sh 'npm install'
+                sh 'npm install --legacy-peer-deps'
                 sh 'npm run build'
             }
         }
