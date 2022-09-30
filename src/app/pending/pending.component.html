@@ -1,35 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="pending.js"></script>
-</head>
-<body>
-    <div ><app-search-bar></app-search-bar></div>
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-            <th>Order Number</th>
-            <th>Status</th>
-            <th>Order Created</th>
-            <th>Order Completed</th>
-        </tr>
-        </thead>
-        <tbody >
-    
-            <tr *ngFor="let order of orders">
-              
-                <!-- <td><a [routerLink]="['/product-detail/',product.id]">{{product.id}}</a></td> -->
-                <td>{{order.orderid}}</td>
-                <!-- <td>{{product.price}}</td>
-                <td>{{product.description}}</td> -->
-               
-            </tr>
+<div>
+    <div class="sticky-top"><app-nav-bar></app-nav-bar></div>
+    <div>
+        
+        <app-metrics></app-metrics>
+    </div>
+    <div class="row justify-content-left">
+        <div class="input-group rounded w-100">
+            <input [(ngModel)]="filterText" placeholder="Search" class="form-control col-4"  />
+            <div class="input-group-append">
+                <div class="col-1"><app-filter-menu></app-filter-menu></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Order Number</th>
+                    <th scope="col">Order Status</th>
+                    <th scope="col">Order Created</th>
+                    <!-- <th>Order Completed</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders|filterOrder: filterText |paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                };">
+                
+                    <td><a [routerLink] ="['/order-detail', order.orderId]">{{order.orderId}}</a></td>
+                    <td>{{order.orderStatus}}</td>
+                    <td>{{order.dateOrdered}}</td>
 
-        </tbody>
-    </table>
-</body>
-</html>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+    </div>
+</div>
