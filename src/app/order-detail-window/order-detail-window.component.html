@@ -4,7 +4,7 @@
     <span>
         <h2 class="customer-heading">Order#: {{customer.order_id}}</h2>
         <h2 class="customer-heading" id="order-status">Order status: {{customer.status}}</h2>
-        <h2 class="customer-heading" id="order-created">Order created: {{customer.date_ordered}}</h2>
+        <h2 *ngIf="orders" class="customer-heading" id="order-created">Order created: {{orders.dateOrdered}}</h2>
     </span>
     <div class="card-container">
 
