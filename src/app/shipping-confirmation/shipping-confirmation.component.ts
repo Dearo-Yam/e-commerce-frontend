@@ -47,12 +47,15 @@ export class ShippingConfirmationComponent implements OnInit {
   }
 
   shipOrder(): void {
-    setTimeout(() => {
-      this.orderService.shipOrder(this.id)
+    this.orderService.shipOrder(this.id)
     .subscribe(customer => this.customer = customer);
-    this.goBack();
-      console.log('hello');
-  }, 1000);
+
+    setTimeout(() => 
+    {
+      this.goBack();
+    }, 1500);
+    
+  
   }
 
 }
