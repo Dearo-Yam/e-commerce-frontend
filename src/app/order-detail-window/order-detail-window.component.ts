@@ -15,6 +15,7 @@ export class OrderDetailWindowComponent implements OnInit {
   customer: any;
   id: any;
   status: boolean = false;
+  shipped:boolean = false;
 
 
   constructor(
@@ -41,6 +42,12 @@ export class OrderDetailWindowComponent implements OnInit {
       return this.status;
     }
     return this.status;
+  }
+
+  checkShipped():boolean{
+    if(this.customer.status ==="Shipped")
+      this.shipped = true;
+    return this.shipped;
   }
 /**
  * CHANGE THIS BACK TO BE ABLE TO COMMUNICATE WITH BACKEND WHENEVER FINISHED WITH MOCK DASHBOARD WORK
