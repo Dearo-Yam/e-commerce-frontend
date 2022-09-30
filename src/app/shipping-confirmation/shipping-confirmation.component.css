@@ -10,24 +10,6 @@ button:hover {
     background-color: #cfd8dc;
 }
 
-button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
-}
-
-.customer-heading {
-    display: inline;
-}
-
-#order-status {
-    padding-left: 180px;
-}
-
-#order-created {
-    padding-left: 180px;
-}
-
 #go-back-button {
     margin-bottom: 2em;
 }

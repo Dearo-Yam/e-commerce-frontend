@@ -1,7 +1,8 @@
 export interface Item {
     //Item ID
-    id: number;
-    name: string;
-    description: string;
-    quantity: number;
+    item_id: number;
+    item_name: string;
+    item_brand: string;
+    item_quantity: number;
+    
 }

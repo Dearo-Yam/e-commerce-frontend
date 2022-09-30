@@ -18,7 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import {  GoogleLoginProvider } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 import { MetricsComponent } from './metrics/metrics.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { ShippedOrdersComponent } from './shipped-orders/shipped-orders.component';
@@ -29,6 +29,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { FilterOrderPipe } from './filter-order.pipe';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { ShippingConfirmationComponent } from './shipping-confirmation/shipping-confirmation.component';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,6 @@ import { AuthGuard } from './shared/guard/auth.guard';
   //  TotalOrderShippedComponent,
     NavBarComponent,
     // OrdersComponent,
-    // OrderDetailWindowComponent,
     OrderDetailWindowComponent,
     PendingComponent,
     HomeComponent,
@@ -48,7 +50,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
     FilterMenuComponent,
     ShippedOrdersComponent,
     FilterOrderPipe,
-    // LogoutComponent,  
+    ShippingConfirmationComponent
   ],
 
   imports: [
@@ -87,7 +89,8 @@ import { AuthGuard } from './shared/guard/auth.guard';
       ],
     } as SocialAuthServiceConfig,
   },],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 
 export class AppModule { }

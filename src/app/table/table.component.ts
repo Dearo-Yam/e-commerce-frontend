@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
-import { OrdersService } from '../orders.service';
 
+import { __param } from 'tslib';
+import { OrdersService } from '../orders.service';
 
 @Component({
   selector: 'app-table',
@@ -24,6 +25,11 @@ export class TableComponent implements OnInit {
   tableSize: number = 10;
   tableSizes: any = [3, 6, 9, 12];
   filterText = '';
+
+  // getOrders(): void {
+  //   this._ordersService.getPendingOrders()
+  //   .subscribe(orders => this.orders = orders);
+  // }
 
   onTableDataChange(event: any) {
     this.page = event;
