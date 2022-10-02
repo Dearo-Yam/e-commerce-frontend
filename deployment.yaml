@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: warehouse-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: warehouse-frontend
+  template:
+    metadata:
+      labels:
+        app: warehouse-frontend
+    spec:
+      containers:
+        - name: warehouse-frontend
+          image: sure777/warehouse-frontend
+#          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
