@@ -18,8 +18,6 @@ pipeline {
         stage('Deploy to Kubernetes') {
                     steps {
                         echo '========== Continuous Deployment begins here =========='
-                            // kubectl create namespace demo-ascend-marketplace-backend --dry-run=client -o yaml
-
                             sh """
                             sleep 5
                             kubectl apply --namespace demo-ascend-namespace -f 'deployment.yaml' --validate=false
