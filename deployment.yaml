@@ -15,7 +15,7 @@ spec:
       containers:
         - name: warehouse-frontend
           image: sure777/warehouse-frontend
-#          imagePullPolicy: Always
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 
