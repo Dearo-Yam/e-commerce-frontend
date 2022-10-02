@@ -7,19 +7,33 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'wms_backend_pwd', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh """
                     docker login --username $USERNAME --password $PASSWORD
-                    docker build -t $USERNAME/wms_frontend:${env.BUILD_NUMBER} .
-                    docker push $USERNAME/wms_frontend:${env.BUILD_NUMBER}
+                    docker build -t $USERNAME/warehouse-frontend:${env.BUILD_NUMBER} .
+                    docker push $USERNAME/warehouse-frontend:${env.BUILD_NUMBER}
                     docker image prune -f
                     """
                 }
                 echo '========== Continuous Integration ends here =========='
             }
         }
+        stage('Deploy to Kubernetes') {
+                    steps {
+                        echo '========== Continuous Deployment begins here =========='
+                            // kubectl create namespace demo-ascend-marketplace-backend --dry-run=client -o yaml
+
+                            sh """
+                            sleep 5
+                            kubectl apply --namespace demo-ascend-namespace -f 'deployment.yaml' --validate=false
+                            sleep 30
+                            kubectl get all --namespace demo-ascend-namespace
+                            """
+                        echo '========== Continuous Deployment ends here =========='
+                    }
+                }
     }
-        post {
-            always {
-                echo 'Cleaning ws'
-                cleanWs()
-            }
+    post {
+        always {
+             echo 'Cleaning ws'
+             cleanWs()
         }
+    }
 }
