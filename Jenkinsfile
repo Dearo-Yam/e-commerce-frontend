@@ -8,7 +8,7 @@ pipeline {
                     sh """
                     docker login --username $USERNAME --password $PASSWORD
                     docker build -t $USERNAME/warehouse-frontend:${env.BUILD_NUMBER} -t $USERNAME/warehouse-frontend:latest .
-                    docker push $USERNAME/warehouse-frontend:${env.BUILD_NUMBER}
+                    docker push $USERNAME/warehouse-frontend:${env.BUILD_NUMBER} --all-tags
                     docker image prune -f
                     """
                 }
