@@ -19,9 +19,8 @@ pipeline {
                     steps {
                         echo '========== Continuous Deployment begins here =========='
                             sh """
-                            sleep 5
                             kubectl apply --namespace demo-ascend-namespace -f 'deployment.yaml' --validate=false
-                            sleep 30
+                            sleep 20
                             kubectl get all --namespace demo-ascend-namespace
                             """
                         echo '========== Continuous Deployment ends here =========='
