@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { OrdersService } from '../orders.service';
 
+
 @Component({
   selector: 'app-shipping-confirmation',
   templateUrl: './shipping-confirmation.component.html',

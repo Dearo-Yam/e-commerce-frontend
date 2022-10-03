@@ -12,7 +12,7 @@ export class ShippedOrdersComponent implements OnInit {
   page: number = 1;
   count: number = 0;
   tableSize: number = 10;
-  tableSizes: any = [3, 6, 9, 12];
+  tableSizes: any = [1, 3, 6, 9];
     constructor(private _ordersService: OrdersService) { }
   
     ngOnInit(): void {

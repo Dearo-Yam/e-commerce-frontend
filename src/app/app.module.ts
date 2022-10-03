@@ -29,6 +29,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { FilterOrderPipe } from './filter-order.pipe';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { ShippingConfirmationComponent } from './shipping-confirmation/shipping-confirmation.component';
 
 
 
@@ -49,7 +50,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
     FilterMenuComponent,
     ShippedOrdersComponent,
     FilterOrderPipe,
-   
+    ShippingConfirmationComponent
   ],
 
   imports: [
