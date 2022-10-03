@@ -20,6 +20,30 @@ export class OrdersService {
   }
 
   getPendingOrders(){
-    return this.http.get<any>(`${this.baseUrl}/show`)
+    return this.http.get<any>(`${this.baseUrl}/pending`)
+  }
+
+  getAllOrders(){
+    return this.http.get<any>(`${this.baseUrl}/all`)
+  }
+  getShippedOrders(){
+    return this.http.get<any>(`${this.baseUrl}/shipped`)
+  }
+
+
+  getTableOrders(){
+    return this.http.get<any>(`${this.baseUrl}/all`);
+  }
+  updateOrderStatus(){
+    //return this.http.put<any>(`${this.baseUrl}/update/${id}/${s}`, orders)
+  }
+
+  getTopSellingItems() {
+    return this.http.get<any>(`${this.baseUrl}/top-selling`);
+  }
+  
+  getOrders(id: number)
+  {
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
 }
